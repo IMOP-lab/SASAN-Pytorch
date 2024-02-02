@@ -1,6 +1,4 @@
 from __future__ import annotations
-from collections.abc import Sequence
-from typing import Optional
 import torch
 import torch.nn as nn
 from operator import itemgetter
@@ -19,6 +17,7 @@ def calculate_permutations(num_dimensions, emb_dim):
     total_dimensions = num_dimensions + 2
     emb_dim = emb_dim if emb_dim > 0 else (emb_dim + total_dimensions)
     axial_dims = [ind for ind in range(1, total_dimensions) if ind != emb_dim]
+    # axial_dims = [ind for ind in range(total_dimensions-1, 1 , -1) if ind != emb_dim]
 
     permutations = []
 
@@ -27,6 +26,7 @@ def calculate_permutations(num_dimensions, emb_dim):
         dims_rest = set(range(0, total_dimensions)) - set(last_two_dims)
         permutation = [*dims_rest, *last_two_dims]
         permutations.append(permutation)
+        # break
       
     return permutations
 
@@ -44,11 +44,8 @@ class Permute(nn.Module):
         shape = axial.shape
         *_, t, d = shape
 
-        axial = axial.reshape(-1, t, d)# merge all but axial dimension
-
-        axial = self.fn(axial, **kwargs)# attention
-
-        # restore to original shape and permutation
+        axial = axial.reshape(-1, t, d)
+        axial = self.fn(axial, **kwargs)
         axial = axial.reshape(*shape)
         axial = axial.permute(*self.inv_permutation).contiguous()
         return axial
@@ -90,8 +87,11 @@ class AxialAttention(nn.Module):
         self.dim_index = dim_index if dim_index > 0 else (dim_index + self.total_dimensions)
 
         attentions = []
-        for permutation in calculate_permutations(num_dimensions, dim_index):
-            attentions.append(Permute(permutation, SelfAttention(dim, heads, dim_heads)))
+        for index in range(0,num_dimensions):
+                for permutation in calculate_permutations(num_dimensions, dim_index+index):#permutation总共有num_dimensions个
+                    attentions.append(Permute(permutation, SelfAttention(dim, heads,dim_heads)))
+        # for permutation in calculate_permutations(num_dimensions, dim_index):
+        #     attentions.append(Permute(permutation, SelfAttention(dim, heads, dim_heads)))
 
         self.axial_attentions = nn.ModuleList(attentions)
         self.sum_axial_out = sum_axial_out
@@ -101,7 +101,7 @@ class AxialAttention(nn.Module):
         assert x.shape[self.dim_index] == self.dim, 'input tensor does not have the correct input dimension'
 
         if self.sum_axial_out:
-            return sum(map(lambda axial_attn: axial_attn(x), self.axial_attentions))
+            return sum(map(lambda axial_attn: axial_attn(x), self.axial_attentions))*0.2
 
         out = x
         for axial_attn in self.axial_attentions:
@@ -115,7 +115,7 @@ class SpatialAttention(torch.nn.Module):#1
         self.in_channels = in_channels
         self.conv = torch.nn.Conv3d(in_channels, 1, kernel_size=1, stride=1, padding=0)
         self.sigmoid = torch.nn.Sigmoid()
-
+ 
     def forward(self, x):
         attention = self.conv(x)
         attention = self.sigmoid(attention)
