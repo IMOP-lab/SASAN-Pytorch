@@ -3,7 +3,6 @@ import torch
 import torch.nn as nn
 from operator import itemgetter
 
-
 def map_el_ind(arr, ind):
     return list(map(itemgetter(ind), arr))
 
