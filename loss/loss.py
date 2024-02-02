@@ -195,7 +195,7 @@ class SMLoss(_Loss):
             batch=batch,
         )
         # self.boundary = BoundaryLoss()
-        self.boundary = BoundaryReaLoss(n_classes=4)
+        self.boundary = BoundaryReaLoss(n_classes=5)
         self.cross_entropy = nn.CrossEntropyLoss(weight=ce_weight, reduction=reduction)
         if lambda_dice < 0.0:
             raise ValueError("lambda_dice should be no less than 0.0.")
@@ -235,28 +235,31 @@ class SMLoss(_Loss):
         # print("ce_loss:",ce_loss)
         boundary_loss = self.boundary(input, target)
         # print("boundary_loss:",boundary_loss)
-        total_loss = self.lambda_dice * dice_loss + self.lambda_ce * ce_loss + self.lambda_boundary * boundary_loss
+        # total_loss = self.lambda_dice * dice_loss + self.lambda_ce * ce_loss + self.lambda_boundary * boundary_loss
 
-        if dice_loss < 0.2 and ce_loss < 0.2:
+        if dice_loss < 0.6 and ce_loss < 0.2 and boundary_loss < 0.7:
+            # print("START!")
 
             if dice_loss > ce_loss and dice_loss > boundary_loss:
-                self.lambda_dice = nn.Parameter(self.lambda_dice * (1+0.005))
-            elif dice_loss > ce_loss or dice_loss > boundary_loss:
-                self.lambda_dice = nn.Parameter(self.lambda_dice * (1+0.001))
+                self.lambda_dice = nn.Parameter(self.lambda_dice * (1+0.0015))
+                if ce_loss > boundary_loss:
+                    self.lambda_ce = nn.Parameter(self.lambda_ce * (1+0.001))
+                else:
+                    self.lambda_boundary = nn.Parameter(self.lambda_boundary* (1+0.0005))
 
             elif ce_loss > dice_loss and ce_loss > boundary_loss:
-                self.lambda_ce = nn.Parameter(self.lambda_ce * (1+0.005))
-            elif ce_loss > dice_loss or ce_loss > boundary_loss:
-                self.lambda_ce = nn.Parameter(self.lambda_ce * (1+0.001))   
+                self.lambda_ce = nn.Parameter(self.lambda_ce * (1+0.0015))
+                if dice_loss > boundary_loss:
+                    self.lambda_dice = nn.Parameter(self.lambda_dice * (1+0.001))
+                else:
+                    self.lambda_boundary = nn.Parameter(self.lambda_boundary* (1+0.0005))
 
-            elif boundary_loss > dice_loss and boundary_loss > ce_loss:
-                self.lambda_boundary = nn.Parameter(self.lambda_boundary * (1+0.005))
-            elif boundary_loss > dice_loss or boundary_loss > ce_loss:
-                self.lambda_boundary = nn.Parameter(self.lambda_boundary * (1+0.001))   
-
-            total_loss = self.lambda_dice * dice_loss + self.lambda_ce * ce_loss + self.lambda_boundary * boundary_loss
-        else:
-            total_loss = self.lambda_dice * dice_loss + self.lambda_ce * ce_loss
+            elif boundary_loss > ce_loss and boundary_loss > dice_loss:
+                self.lambda_boundary = nn.Parameter(self.lambda_boundary * (1+0.0015))
+                if ce_loss > dice_loss:
+                    self.lambda_ce = nn.Parameter(self.lambda_ce * (1+0.001))
+                else:
+                    self.lambda_dice = nn.Parameter(self.lambda_dice* (1+0.0005))
 
         new_lambda_dice = nn.Parameter(F.softplus(self.lambda_dice))
         new_lambda_ce = nn.Parameter(F.softplus(self.lambda_ce))
@@ -265,16 +268,21 @@ class SMLoss(_Loss):
         new_lambda_dice = new_lambda_dice / normalizing_factor
         new_lambda_ce = new_lambda_ce / normalizing_factor
         new_lambda_boundary = new_lambda_boundary / normalizing_factor
-        
-        with torch.no_grad():
-            self.lambda_dice.data = nn.Parameter(new_lambda_dice).data
-            self.lambda_ce.data = nn.Parameter(new_lambda_ce).data
-            self.lambda_boundary.data = nn.Parameter(new_lambda_boundary).data
+
+        total_loss = new_lambda_dice * dice_loss + new_lambda_ce * ce_loss + new_lambda_boundary * boundary_loss
+
+        # with torch.no_grad():
+        #     self.lambda_dice.data = nn.Parameter(new_lambda_dice).data
+        #     self.lambda_ce.data = nn.Parameter(new_lambda_ce).data
+        #     self.lambda_boundary.data = nn.Parameter(new_lambda_boundary).data
             
         loss_dict = {
                 'total_loss': total_loss,
                 'dice_loss': dice_loss,
                 'ce_loss': ce_loss,
                 'boundary_loss': boundary_loss,
+                'new_lambda_dice': new_lambda_dice,
+                'new_lambda_ce': new_lambda_ce,
+                'new_lambda_boundary': new_lambda_boundary,             
             }
         return total_loss,loss_dict
