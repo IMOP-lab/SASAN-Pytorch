@@ -23,7 +23,6 @@ from monai.utils import deprecated_arg, ensure_tuple_rep
 from monai.networks.blocks.dynunet_block import UnetOutBlock
 from monai.networks.blocks.unetr_block import UnetrBasicBlock, UnetrUpBlock
 
-
 class LayerNorm(nn.Module):
     def __init__(self, normalized_shape, eps=1e-6, data_format="channels_last"):
         super().__init__()
