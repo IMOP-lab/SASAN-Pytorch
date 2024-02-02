@@ -237,7 +237,7 @@ class SMLoss(_Loss):
         # print("boundary_loss:",boundary_loss)
         # total_loss = self.lambda_dice * dice_loss + self.lambda_ce * ce_loss + self.lambda_boundary * boundary_loss
 
-        if dice_loss < 0.6 and ce_loss < 0.2 and boundary_loss < 0.7:
+        if dice_loss < 0.6 and ce_loss < 0.2 and boundary_loss < 0.7:   #It depends on your network and your task
             # print("START!")
 
             if dice_loss > ce_loss and dice_loss > boundary_loss:
