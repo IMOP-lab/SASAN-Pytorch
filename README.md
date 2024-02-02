@@ -4,9 +4,9 @@
 
 SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation
 
-Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Yaoqi Sun, Juzhen Wang, and Yihao Guo
+Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Qianni Zhang, Yinh Fu, Yangyundou Wang, and Yihao Guo
 
-Hangzhou Dianzi University
+Hangzhou Dianzi University IMOP-lab
 
 <div align=center>
   <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/figures/SASAN.png">
