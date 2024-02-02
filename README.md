@@ -34,7 +34,7 @@ FINE combines spatial and frequency domain information to add low-frequency deta
 ### ASEM Module
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=200% height=200%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png">
 </div>
 <p align=center>
   Figure 3: The ASEM Module.
