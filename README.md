@@ -34,7 +34,7 @@ FINE combines spatial and frequency domain information to add low-frequency deta
 ### ASEM Module
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=80% height=80%>
 </div>
 <p align=center>
   Figure 3: The ASEM Module.
@@ -75,14 +75,14 @@ Our method demonstrates the best performance across all categories and metrics. 
 ### Compare with others on the OIMHS dataset
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/OIMHS_table.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/OIMHS_table.png">
 </div>
 <p align=center>
   Figure 6: Comparison experiments between our method and 13 previous segmentation methods on the OIMHS dataset.
 </p>
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/OIHMS%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE%E5%B0%8F.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/OIHMS_segmentation.png">
 </div>
 <p align=center>
   Figure 7: The segmentation results of our method compared to the existing 13 segmentation methods on the OIMHS dataset.
