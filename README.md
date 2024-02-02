@@ -9,7 +9,7 @@ Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao
 Hangzhou Dianzi University IMOP-lab
 
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/figures/SASAN.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/SASAN.png">
 </div>
 <p align=center>
   Figure 1: The network structure of SASAN.
@@ -23,7 +23,7 @@ We will first introduce our method and principles, then introduce the experiment
 ### FINE Module
 
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/figures/FINE.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/FINE.png"width=80% height=80%>
 </div>
 <p align=center>
   Figure 2: The FINE Module.
@@ -34,7 +34,7 @@ FINE combines spatial and frequency domain information to add low-frequency deta
 ### ASEM Module
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=200% height=200%>
 </div>
 <p align=center>
   Figure 3: The ASEM Module.
@@ -57,14 +57,14 @@ We have provided GitHub links pointing to the PyTorch implementation code for al
 ### Compare with others on the CMED dataset
 
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/tables/Compare.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Compare.png">
 </div>
 <p align=center>
   Figure 4: Comparison experiments between our method and 13 previous segmentation methods on the CMED dataset.
 </p>
 
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/figures/Rendering.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Rendering.png">
 </div>
 <p align=center>
   Figure 5: The segmentation results of our method compared to the existing 13 segmentation methods on the CMED dataset.
@@ -103,7 +103,7 @@ Comparative experiments on the public OIMHS dataset and five-fold cross-validati
 
 #### Key components of SASAN
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/tables/Ablation1.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation1.png">
 </div>
 <p align=center>
   Figure 9: Ablation experiments on key components of SASAN on the CMED dataset.
@@ -114,7 +114,7 @@ FINE introduces a wide range of low-frequency features, which has a good effect 
 #### Loss function strategy
 
 <div align=center>
-  <img src="https://github.com/IIPL-HangzhouDianziUniversity/SASAN-pytorch/blob/main/tables/Ablation2.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation2.png">
 </div>
 <p align=center>
   Figure 10: Ablation experiments on Loss function strategy on the CMED dataset.
