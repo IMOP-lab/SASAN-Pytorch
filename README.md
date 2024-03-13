@@ -9,7 +9,7 @@ Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao
 Hangzhou Dianzi University IMOP-lab
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/SASAN.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png">
 </div>
 <p align=center>
   Figure 1: The network structure of SASAN.
