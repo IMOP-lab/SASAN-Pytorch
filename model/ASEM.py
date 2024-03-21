@@ -87,10 +87,8 @@ class AxialAttention(nn.Module):
 
         attentions = []
         for index in range(0,num_dimensions):
-                for permutation in calculate_permutations(num_dimensions, dim_index+index):#permutation总共有num_dimensions个
+                for permutation in calculate_permutations(num_dimensions, dim_index+index):
                     attentions.append(Permute(permutation, SelfAttention(dim, heads,dim_heads)))
-        # for permutation in calculate_permutations(num_dimensions, dim_index):
-        #     attentions.append(Permute(permutation, SelfAttention(dim, heads, dim_heads)))
 
         self.axial_attentions = nn.ModuleList(attentions)
         self.sum_axial_out = sum_axial_out
@@ -107,7 +105,7 @@ class AxialAttention(nn.Module):
             out = axial_attn(out)
         return out
 
-class SpatialAttention(torch.nn.Module):#1
+class SpatialAttention(torch.nn.Module):
     def __init__(self, spatial_dims, in_channels):
         super().__init__()
         self.spatial_dims = spatial_dims
