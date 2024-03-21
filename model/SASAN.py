@@ -3,10 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from timm.models.layers import trunc_normal_, DropPath
 from functools import partial
-import torch.nn.functional as F
 from .ASEM import *
-
-import torch
 import pytorch_lightning as pl
 from monai.data import decollate_batch
 from monai.inferers import sliding_window_inference
@@ -15,8 +12,6 @@ from monai.metrics import DiceMetric
 from monai.transforms import AsDiscrete, Compose, EnsureType
 from monai.visualize.img2tensorboard import plot_2d_or_3d_image
 from typing import Optional, Sequence, Union
-import torch
-import torch.nn as nn
 from monai.networks.blocks import Convolution, UpSample
 from monai.networks.layers.factories import Conv, Pool
 from monai.utils import deprecated_arg, ensure_tuple_rep
