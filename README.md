@@ -1,6 +1,6 @@
 # SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation
 
-### [Project page](https://github.com/IMOP-lab/SASAN-Pytorch) | [Our laboratory home page](https://github.com/IMOP-lab) 
+### [Project page](https://github.com/IMOP-lab/SASAN-Pytorch) | [Paper](https://ieeexplore.ieee.org/abstract/document/10486971) | [Our laboratory home page](https://github.com/IMOP-lab) 
 
 SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation
 
