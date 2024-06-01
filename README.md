@@ -14,10 +14,10 @@ Hangzhou Dianzi University IMOP-lab
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png">
 </div>
 <p align=center>
-  Figure 1: The network structure of SASAN.
+  Figure 1: Detailed network structure of the SASAN.
 </p>
 
-We proposed SASAN, a novel 3D medical image segmentation network, achieving state-of-the-art performance over 13 previous methods on both the CMED and OIMHS datasets.
+We propose SASAN, an innovative 3D medical image segmentation network that integrates spectrum information. SASAN achieves state-of-the-art performance over 13 previous methods on the CMED and OIMHS datasets.
 
 We will first introduce our method and principles, then introduce the experimental environment and provide Github links to previous methods we have compared. Finally, we will present the experimental results.
 
@@ -28,7 +28,7 @@ We will first introduce our method and principles, then introduce the experiment
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/FINE.png"width=80% height=80%>
 </div>
 <p align=center>
-  Figure 2: The FINE Module.
+  Figure 2: Structure of the FINE module.
 </p>
 
 FINE combines spatial and frequency domain information to add low-frequency details from the original image to the feature map. This preserves the main structural information and effectively reduces noise and other disturbances.
@@ -39,22 +39,22 @@ FINE combines spatial and frequency domain information to add low-frequency deta
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=80% height=80%>
 </div>
 <p align=center>
-  Figure 3: The ASEM Module.
+  Figure 3: Structure of the ASEM module.
 </p>
 
-ASEM comprehensively extracts spatial features and features along each axis of 3D OCT sequences, significantly enhancing the network's analytical capabilities.
+ASEM comprehensively extracts spatial features and key features along each axis of 3D medical image sequences, significantly enhancing the network's analytical capabilities of indiscernible feature information.
 
 ## Installation
-We run SASAN and previous methods on a system running Ubuntu 22.04, with Python 3.9, PyTorch 2.0.0, and CUDA 11.8. For a full list of software packages and version numbers, see the experimental environment file `environment.yml`. 
+We run SASAN and previous methods on a system running Ubuntu 22.04, with Python 3.9, PyTorch 2.0.0, and CUDA 11.8. For a full list of software packages and version numbers, see the experimental environment file 'environment.yml'. 
 
 ## Experiment
 ### Baselines
 
+We provide GitHub links pointing to the PyTorch implementation code for all networks compared in this experiment here, so you can easily reproduce all these projects.
+
 [3D U-Net](https://github.com/wolny/pytorch-3dunet); [RAUNet](https://github.com/nizhenliang/RAUNet); [UNETR](https://github.com/tamasino52/UNETR); [SwinUNETR](https://github.com/LeonidAlekseev/Swin-UNETR); [ResUNet](https://github.com/rishikksh20/ResUnet);
 [MultiResUNet](https://github.com/nibtehaz/MultiResUNet); [V-Net](https://github.com/mattmacy/vnet.pytorch); [3D UX-Net](https://github.com/MASILab/3DUX-Net); [SegResNet](https://github.com/Project-MONAI/MONAI/blob/dev/monai/networks/nets/segresnet.py); [HighRes3DNet](https://github.com/fepegar/highresnet);
 [TransBTS](https://github.com/Rubics-Xuan/TransBTS); [nnFormer](https://github.com/282857341/nnFormer); [SETR](https://github.com/fudan-zvg/SETR)
-
-We have provided GitHub links pointing to the PyTorch implementation code for all networks compared in this experiment so you can easily reproduce all these projects.
 
 ### Compare with others on the CMED dataset
 
@@ -69,7 +69,7 @@ We have provided GitHub links pointing to the PyTorch implementation code for al
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Rendering.png">
 </div>
 <p align=center>
-  Figure 5: The segmentation results of our method compared to the existing 13 segmentation methods on the CMED dataset.
+  Figure 5: The visual results of our method compared to the existing 13 segmentation methods on the CMED dataset.
 </p>
     
 Our method demonstrates the best performance across all categories and metrics. SASAN outperforms previous methods in detail segmentation of choroidal and macular edema categories, highlighting the role of low-frequency data in enhancing details and reducing noise. In addition, SASAN performs well in boundary segmentation of retinal categories, thanks to its BoundaryRea loss and self-updating mechanism, which improves sensitivity to boundary distance.
@@ -87,7 +87,7 @@ Our method demonstrates the best performance across all categories and metrics. 
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/OIHMS_segmentation.png">
 </div>
 <p align=center>
-  Figure 7: The segmentation results of our method compared to the existing 13 segmentation methods on the OIMHS dataset.
+  Figure 7: The visual results of our method compared to the existing 13 segmentation methods on the OIMHS dataset.
 </p>
 
 #### Cross Validation Results
@@ -122,7 +122,7 @@ FINE introduces a wide range of low-frequency features, which has a good effect 
   Figure 10: Ablation experiments on Loss function strategy on the CMED dataset.
 </p>
 
-The self-updating mechanism and BoundaryRea Loss enhance the network's boundary segmentation ability  And to a certain extent, it also improves the overall segmentation ability of the network.
+The self-updating mechanism and BoundaryRea Loss enhance the network's boundary segmentation ability. To a certain extent, it also improves the overall segmentation ability of the network.
 
 ### Model Complexity
 
@@ -130,5 +130,5 @@ The self-updating mechanism and BoundaryRea Loss enhance the network's boundary 
   <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Parameters.png">
 </div>
 <p align=center>
-  Figure 11: Comparative Assessment of Parameters, FLOPs, and Inference Time for Our Proposed Method versus Classical Models Under Uniform Evaluation Settings and Computer Configuration.
+  Figure 11: Comparative assessment of parameters, FLOPs, and inference time for our proposed method versus classical models under uniform evaluation settings and computer configuration.
 </p>
