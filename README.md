@@ -93,7 +93,7 @@ Our method demonstrates the best performance across all categories and metrics. 
 #### Cross Validation Results
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/5fold.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/five-fold-cross.png">
 </div>
 <p align=center>
   Figure 8: Our method's 5-fold cross-validation results compared to the 13 segmentation methods on the OIMHS dataset.
@@ -127,7 +127,7 @@ The self-updating mechanism and BoundaryRea Loss enhance the network's boundary 
 ### Model Complexity
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/FLOPS.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Parameters.png">
 </div>
 <p align=center>
   Figure 11: Comparative Assessment of Parameters, FLOPs, and Inference Time for Our Proposed Method versus Classical Models Under Uniform Evaluation Settings and Computer Configuration.
