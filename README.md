@@ -6,7 +6,7 @@ Our paper has been accepted by IEEE Transactions on Medical Imaging!
 
 SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation
 
-Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Qianni Zhang, Yinh Fu, Yangyundou Wang, and Yihao Guo
+Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Qianni Zhang, Ying Fu, Yangyundou Wang, and Yihao Guo
 
 Hangzhou Dianzi University IMOP-lab
 
