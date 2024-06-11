@@ -45,7 +45,7 @@ FINE combines spatial and frequency domain information to add low-frequency deta
 ASEM comprehensively extracts spatial features and key features along each axis of 3D medical image sequences, significantly enhancing the network's analytical capabilities of indiscernible feature information.
 
 ## Installation
-We run SASAN and previous methods on a system running Ubuntu 22.04, with Python 3.9, PyTorch 2.0.0, and CUDA 11.8. For a full list of software packages and version numbers, see the experimental environment file 'environment.yml'. 
+We run SASAN and previous methods on a system running Ubuntu 22.04, with Python 3.9, PyTorch 2.0.0, and CUDA 11.8. For a full list of software packages and version numbers, see the experimental environment file 'environment.yaml'. 
 
 ## Experiment
 ### Baselines
