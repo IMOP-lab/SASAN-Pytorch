@@ -32,7 +32,7 @@ We provide GitHub links pointing to the PyTorch implementation code for all netw
 ### Compare with others on the CMED dataset
 
 <div align=left>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Compare.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Compare.png"width=90% height=90%>
 </div>
 <p align=left>
   Figure 2: Comparison experiments between our method and 13 previous segmentation methods on the CMED dataset.
@@ -51,7 +51,7 @@ Our method demonstrates the best performance across all categories and metrics. 
 
 #### Key components of SASAN
 <div align=left>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation1.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation1.png"width=90% height=90%>
 </div>
 <p align=left>
   Figure 4: Ablation experiments on key components of SASAN on the CMED dataset.
@@ -61,7 +61,7 @@ FINE introduces a wide range of low-frequency features, which has a good effect 
 
 #### Loss function strategy
 <div align=left>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation2.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Ablation2.png"width=90% height=90%>
 </div>
 <p align=left>
   Figure 5: Ablation experiments on Loss function strategy on the CMED dataset.
