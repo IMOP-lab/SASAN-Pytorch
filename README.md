@@ -4,20 +4,18 @@
 
 Our paper has been accepted by IEEE Transactions on Medical Imaging!
 
-SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation
-
-Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Qianni Zhang, Ying Fu, Yangyundou Wang, and Yihao Guo
+by Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wenhao Chen, Ruihao Wang, Xuanbin Chen, Qianni Zhang, Ying Fu, Yangyundou Wang, and Yihao Guo
 
 Hangzhou Dianzi University IMOP-lab
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png"width=80% height=80%>
 </div>
 <p align=center>
   Figure 1: Detailed network structure of the SASAN.
 </p>
 
-We propose SASAN, an innovative 3D medical image segmentation network that integrates spectrum information. SASAN achieves state-of-the-art performance over 13 previous methods on the CMED and OIMHS datasets.
+The proposed SASAN is an innovative 3D medical image segmentation network that integrates spectrum information. It achieves state-of-the-art performance over 13 previous methods on the CMED and OIMHS datasets.
 
 We will first introduce our method and principles, then introduce the experimental environment and provide Github links to previous methods we have compared. Finally, we will present the experimental results.
 
@@ -25,7 +23,7 @@ We will first introduce our method and principles, then introduce the experiment
 ### FINE Module
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/FINE.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/FINE.png"width=50% height=50%>
 </div>
 <p align=center>
   Figure 2: Structure of the FINE module.
@@ -36,7 +34,7 @@ FINE combines spatial and frequency domain information to add low-frequency deta
 ### ASEM Module
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=80% height=80%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/ASEM.png"width=50% height=50%>
 </div>
 <p align=center>
   Figure 3: Structure of the ASEM module.
@@ -59,14 +57,14 @@ We provide GitHub links pointing to the PyTorch implementation code for all netw
 ### Compare with others on the CMED dataset
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Compare.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/tables/Compare.png"width=80% height=80%>
 </div>
 <p align=center>
   Figure 4: Comparison experiments between our method and 13 previous segmentation methods on the CMED dataset.
 </p>
 
 <div align=center>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Rendering.png">
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/Rendering.png"width=80% height=80%>
 </div>
 <p align=center>
   Figure 5: The visual results of our method compared to the existing 13 segmentation methods on the CMED dataset.
@@ -132,3 +130,17 @@ The self-updating mechanism and BoundaryRea Loss enhance the network's boundary 
 <p align=center>
   Figure 11: Comparative assessment of parameters, FLOPs, and inference time for our proposed method versus classical models under uniform evaluation settings and computer configuration.
 </p>
+
+# Citation
+If SASAN is useful for your research,  please consider citing:
+
+    @article{huang2024sasan,
+      title={SASAN: Spectrum-Axial Spatial Approach Networks for Medical Image Segmentation},
+      author={Huang, Xingru and Huang, Jian and Zhao, Kai and Zhang, Tianyun and Li, Zhi and Yue, Changpeng and Chen, Wenhao and Wang, Ruihao and Chen, Xuanbin and Zhang, Qianni and others},
+      journal={IEEE Transactions on Medical Imaging},
+      year={2024},
+      publisher={IEEE}
+    }
+
+# Question
+if you have any questions, please contact 'j.huang@hdu.edu.cn'
