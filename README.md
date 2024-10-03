@@ -9,7 +9,7 @@ by Xingru Huang, Jian Huang, Kai Zhao, Tianyun Zhang, Zhi Li, Changpeng Yue, Wen
 Hangzhou Dianzi University IMOP-lab
 
 <div align=left>
-  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png"width=90% height=90%>
+  <img src="https://github.com/IMOP-lab/SASAN-Pytorch/blob/main/figures/network.png">
 </div>
 <p align=left>
   Figure 1: Detailed network structure of the SASAN.
@@ -27,9 +27,7 @@ We run SASAN and previous methods on a system running Ubuntu 22.04, with Python 
 
 We provide GitHub links pointing to the PyTorch implementation code for all networks compared in this experiment here, so you can easily reproduce all these projects.
 
-[3D U-Net](https://github.com/wolny/pytorch-3dunet); [RAUNet](https://github.com/nizhenliang/RAUNet); [UNETR](https://github.com/tamasino52/UNETR); [SwinUNETR](https://github.com/LeonidAlekseev/Swin-UNETR); [ResUNet](https://github.com/rishikksh20/ResUnet);
-[MultiResUNet](https://github.com/nibtehaz/MultiResUNet); [V-Net](https://github.com/mattmacy/vnet.pytorch); [3D UX-Net](https://github.com/MASILab/3DUX-Net); [SegResNet](https://github.com/Project-MONAI/MONAI/blob/dev/monai/networks/nets/segresnet.py); [HighRes3DNet](https://github.com/fepegar/highresnet);
-[TransBTS](https://github.com/Rubics-Xuan/TransBTS); [nnFormer](https://github.com/282857341/nnFormer); [SETR](https://github.com/fudan-zvg/SETR)
+[3D U-Net](https://github.com/wolny/pytorch-3dunet);  [RAUNet](https://github.com/nizhenliang/RAUNet);  [UNETR](https://github.com/tamasino52/UNETR);  [SwinUNETR](https://github.com/LeonidAlekseev/Swin-UNETR);  [ResUNet](https://github.com/rishikksh20/ResUnet);  [MultiResUNet](https://github.com/nibtehaz/MultiResUNet);  [V-Net](https://github.com/mattmacy/vnet.pytorch);  [3D UX-Net](https://github.com/MASILab/3DUX-Net);  [SegResNet](https://github.com/Project-MONAI/MONAI/blob/dev/monai/networks/nets/segresnet.py);  [HighRes3DNet](https://github.com/fepegar/highresnet);  [TransBTS](https://github.com/Rubics-Xuan/TransBTS);  [nnFormer](https://github.com/282857341/nnFormer); [SETR](https://github.com/fudan-zvg/SETR)
 
 ### Compare with others on the CMED dataset
 
